@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Carbon Footprint Calculator</title>
+  <link rel="stylesheet" href="./assets/css/carbon-style.css">
+
+</head>
+<body>
+  <div class="container">
+    <h1>Carbon Footprint Calculator 🌏</h1>
+
+    <form id="carbonForm">
+      <section>
+        <h2>Food</h2>
+        <label>Animal-based product consumption:</label>
+        <select id="animalProducts">
+          <option value="0">Never</option>
+          <option value="1">Occasionally</option>
+          <option value="2">Very Often</option>
+          <option value="3">Daily</option>
+          <option value="4">Multiple times daily</option>
+          <option value="5">Every Meal</option>
+        </select>
+
+        <label>Unprocessed/local food consumption:</label>
+        <select id="localFood">
+          <option value="0">None</option>
+          <option value="1">30%</option>
+          <option value="2">All</option>
+          <option value="3">Organic only</option>
+          <option value="4">Home-grown</option>
+          <option value="5">Farmer's Market</option>
+        </select>
+      </section>
+
+      <section>
+        <h2>Housing</h2>
+        <label>People in household:</label>
+        <input type="number" id="householdSize" placeholder="e.g. 2" />
+
+        <label>Electricity available?</label>
+        <select id="electricity">
+          <option value="0">No</option>
+          <option value="1">Yes</option>
+        </select>
+
+        <label>Energy efficiency:</label>
+        <select id="efficiency">
+          <option value="0">Hardly</option>
+          <option value="1">Average</option>
+          <option value="2">Very</option>
+          <option value="3">Passive House</option>
+          <option value="4">Zero Energy Building</option>
+          <option value="5">Smart Energy Home</option>
+        </select>
+
+        <label>Renewable energy %:</label>
+        <input type="number" id="renewable" placeholder="e.g. 12" />
+
+        <label>Trash compared to neighbors:</label>
+        <select id="trash">
+          <option value="0">Much More</option>
+          <option value="1">Same</option>
+          <option value="2">Much Less</option>
+          <option value="3">Zero Waste Lifestyle</option>
+          <option value="4">Recycling Only</option>
+        </select>
+      </section>
+
+      <section>
+        <h2>Transportation</h2>
+        <label>Car/motorcycle travel per week (km):</label>
+        <input type="number" id="carTravel" placeholder="e.g. 213" />
+
+        <label>Bike travel per week (km):</label>
+        <input type="number" id="bikeTravel" placeholder="e.g. 5" />
+
+        <label>Fuel economy (L/100km):</label>
+        <input type="number" id="fuelEfficiency" placeholder="e.g. 7" />
+
+        <label>Carpool frequency:</label>
+        <select id="carpool">
+          <option value="0">Never</option>
+          <option value="1">Occasionally</option>
+          <option value="2">Always</option>
+          <option value="3">Only carpool</option>
+          <option value="4">EV Ride Share</option>
+        </select>
+
+        <label>Public transport use per week (km):</label>
+        <input type="number" id="publicTransport" placeholder="e.g. 34" />
+
+        <label>Flight hours per year:</label>
+        <input type="number" id="flightHours" placeholder="e.g. 6" />
+      </section>
+
+      <button type="button" onclick="calculateFootprint()">Calculate Footprint</button>
+    </form>
+
+    <div class="result" id="result"></div>
+    <div id="chartContainer">
+      <canvas id="footprintChart"></canvas>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="./assets/js/carbon-script.js"></script>
+</body>
+</html>
